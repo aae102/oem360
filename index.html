@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OEM360 | Worker health and occupational medicine</title>
+<title>OEM360</title>
 <meta name="description" content="OEM360 connects students to occupational and environmental medicine and helps workers and small businesses discover existing workplace health and safety resources. Student-led, building through education and partnerships.">
 <!-- If a "Powered by Netlify" badge shows on the live site, it is added by Netlify, not by this file. Turn it off in Netlify: Site configuration > General > Site details or Badges (or claim the site / upgrade if Netlify requires it). -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23F8EAE3%22/%3E%3Csvg%20x%3D%2210%22%20y%3D%225%22%20width%3D%2244%22%20height%3D%2254%22%20viewBox%3D%22550%20350%20660%201050%22%3E%3Cdefs%3E%3Cmask%20id%3D%22c%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221800%22%20height%3D%221800%22%3E%3Crect%20width%3D%221800%22%20height%3D%221800%22%20fill%3D%22white%22/%3E%3Cpath%20d%3D%22M873%20835v115M815%20893h116%22%20stroke%3D%22black%22%20stroke-width%3D%22110%22%20stroke-linecap%3D%22round%22/%3E%3C/mask%3E%3C/defs%3E%3Cg%20mask%3D%22url%28%23c%29%22%20stroke%3D%22%230B53E0%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22%3E%3Cline%20x1%3D%22642%22%20y1%3D%22655%22%20x2%3D%221090%22%20y2%3D%22435%22%20stroke-width%3D%22140%22/%3E%3Cline%20x1%3D%22858%22%20y1%3D%22705%22%20x2%3D%221115%22%20y2%3D%22835%22%20stroke-width%3D%22112%22/%3E%3Cline%20x1%3D%22625%22%20y1%3D%22870%22%20x2%3D%221095%22%20y2%3D%221110%22%20stroke-width%3D%22140%22/%3E%3Cline%20x1%3D%22645%22%20y1%3D%221305%22%20x2%3D%22945%22%20y2%3D%221170%22%20stroke-width%3D%22112%22/%3E%3C/g%3E%3Cpath%20d%3D%22M873%20835v115M815%20893h116%22%20stroke%3D%22%237B4562%22%20stroke-width%3D%2256%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%3C/svg%3E%3C/svg%3E">
@@ -931,6 +931,69 @@ html body .top .langsel, html body .langsel.desk, html body .langsel.mob{ displa
 @media (max-width:760px){ .issue{ margin-top:30px; } .ibig{ font-size:44px; } .imeta{ font-size:11px; gap:4px 12px; } .imeta span + span::before{ display:none; }
   .inum{ padding:20px 18px; border-radius:16px; } .inum b{ font-size:64px; } .inum p{ font-size:15px; }
   .iletter p{ font-size:15.5px; line-height:1.65; } .iletter .ltitle{ font-size:23px; } .icard{ padding:16px; } }
+
+/* ===== calmer separation ===== */
+.sdiv{ display:flex; align-items:center; gap:14px; margin:0 0 22px; }
+.sdiv span{ font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--plum); white-space:nowrap; }
+.sdiv::after{ content:''; flex:1; height:1px; background:var(--rule); }
+.issue, .paths, .about, .hero > .sdiv{ margin-top:clamp(56px,7vw,88px) !important; }
+.street{ margin-top:0 !important; }
+.paths, .about{ padding-top:0 !important; }
+.s + .s:not(.paths):not(.about){ border-top:1px solid var(--rule); margin-top:clamp(36px,5vw,56px); padding-top:clamp(28px,4vw,44px) !important; }
+.street-hint{ margin-top:0 !important; }
+.iteaser{ border-top:0 !important; }
+.inum{ background:var(--white) !important; color:var(--ink) !important; box-shadow:var(--shadow); border-left:4px solid var(--blue); }
+.inum .klabel{ color:var(--plum) !important; }
+.inum b{ color:var(--blue); }
+.inum p{ color:var(--ink); }
+.isrc{ color:var(--ink2); opacity:1 !important; }
+.imast{ border-bottom:1px solid var(--ink) !important; }
+.iarch{ margin-top:30px; }
+.iarchrow{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+.iacard{ font:inherit; text-align:left; display:flex; flex-direction:column; gap:6px; padding:14px 16px; border-radius:14px; border:1px solid var(--rule); background:transparent; color:var(--ink); cursor:pointer; }
+.iacard:hover{ border-color:var(--blue); }
+.iacard[aria-current="true"]{ background:var(--white); border-color:var(--blue); box-shadow:var(--shadow); cursor:default; }
+.iacard.soon{ cursor:default; border-style:dashed; color:var(--ink2); }
+.iano{ font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); }
+.iat{ font-family:var(--display); font-size:17px; line-height:1.3; font-weight:600; }
+.iastate{ font-size:13px; font-weight:700; color:var(--blue); margin-top:auto; }
+.ilatest{ font:inherit; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; }
+@media (max-width:760px){ .sdiv{ margin-bottom:16px; } .issue, .paths, .about, .hero > .sdiv{ margin-top:48px !important; } .iarchrow{ grid-template-columns:1fr; } }
+
+.iarchhead{ display:flex; justify-content:space-between; align-items:center; gap:10px 16px; flex-wrap:wrap; margin-bottom:8px; }
+.iarchhead .klabel{ margin:0; }
+.iapick{ display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--ink2); }
+.iapick select{ font:inherit; font-size:13.5px; max-width:min(320px,70vw); padding:6px 10px; border-radius:10px; border:1px solid var(--rule); background:var(--white); color:var(--ink); }
+.iarchrow{ grid-template-columns:repeat(4,minmax(0,1fr)) !important; }
+@media (max-width:1000px){ .iarchrow{ grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+@media (max-width:760px){ .iarchrow{ grid-template-columns:1fr !important; } }
+
+.iyears{ display:flex; gap:6px; flex-wrap:wrap; }
+.iyears button{ font:inherit; font-size:13px; font-weight:700; padding:5px 12px; border-radius:999px; border:1px solid var(--rule); background:transparent; color:var(--ink2); cursor:pointer; }
+.iyears button[aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
+.imonths{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.ipill{ font:inherit; display:inline-flex; flex-direction:column; align-items:flex-start; gap:1px; padding:8px 14px; border-radius:12px; border:1px solid var(--rule); background:var(--white); color:var(--ink); font-size:15px; font-weight:600; cursor:pointer; line-height:1.2; }
+.ipill small{ font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink2); }
+.ipill:hover{ border-color:var(--blue); }
+.ipill[aria-current="true"]{ border-color:var(--blue); box-shadow:0 0 0 1px var(--blue) inset; }
+.ipill[aria-current="true"] small{ color:var(--blue); }
+.ipill.soon{ background:transparent; border-style:dashed; color:var(--ink2); cursor:default; }
+.iempty{ font-size:14px; color:var(--ink2); }
+
+.imetawrap{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+.iarchdd{ position:relative; }
+.iarchdd > summary{ list-style:none; cursor:pointer; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); border:1px solid var(--rule); border-radius:999px; padding:7px 14px; background:var(--white); display:inline-flex; align-items:center; gap:8px; }
+.iarchdd > summary::-webkit-details-marker{ display:none; }
+.iarchdd > summary::after{ content:''; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform .15s; }
+.iarchdd[open] > summary::after{ transform:rotate(-135deg) translateY(-1px); }
+.ddmenu{ position:absolute; right:0; top:calc(100% + 8px); z-index:30; min-width:220px; max-height:320px; overflow:auto; background:var(--white); border:1px solid var(--rule); border-radius:14px; box-shadow:0 12px 30px rgba(0,0,0,.18); padding:8px; }
+.ddyear{ margin:6px 8px 4px; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--plum); }
+.dditem{ font:inherit; display:flex; justify-content:space-between; align-items:baseline; gap:12px; width:100%; text-align:left; padding:9px 10px; border:0; border-radius:10px; background:transparent; color:var(--ink); font-size:15px; font-weight:600; cursor:pointer; }
+.dditem small{ font-size:11.5px; font-weight:700; letter-spacing:.04em; color:var(--ink2); }
+button.dditem:hover{ background:var(--paper2); }
+.dditem[aria-current="true"]{ color:var(--blue); } .dditem[aria-current="true"] small{ color:var(--blue); }
+.dditem.soon{ color:var(--ink2); cursor:default; font-weight:500; }
+@media (max-width:760px){ .imetawrap{ align-items:flex-start; } .ddmenu{ left:0; right:auto; } }
 </style>
 </head>
 <body class="gated">
@@ -1001,10 +1064,20 @@ html body .top .langsel, html body .langsel.desk, html body .langsel.mob{ displa
   const teaserHTML = () => { const x = latestIssue(); if (!x) return '';
     return `<aside class="iteaser"><span class="ibrand">Clocking In</span><span class="ikick">Issue ${x.issue} · ${fmtMonth(x.month)}</span><b class="tnum">${x.stat.value}</b><p class="tstat">${x.stat.text}</p><p class="ttitle">${x.title}</p><button type="button" class="tgo" data-goissue>Read this month’s issue ↓</button></aside>`; };
   const letterHTML = x => `<h3 class="ltitle">${x.title}</h3>${x.body.map((p, i) => `<p${i === 0 ? ' class="lfirst"' : ''}>${citeHTML(p)}</p>`).join('')}<details class="lrefs"><summary>References (${x.refs.length})</summary><ol>${x.refs.map(([r, l]) => `<li>${l ? `<a href="${l}" target="_blank" rel="noopener">${r}</a>` : r}</li>`).join('')}</ol></details>`;
-  const issueHTML = () => { const all = ISSUES.slice().sort((a, b) => b.month.localeCompare(a.month)); const x = all[0]; if (!x) return '';
+  let issueSel = null, archYear = null;
+  document.addEventListener('click', e => { document.querySelectorAll('.iarchdd[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; }); });
+  const issueHTML = () => { const all = ISSUES.slice().sort((a, b) => b.month.localeCompare(a.month)); if (!all.length) return '';
+    const x = all.find(o => o.month === issueSel) || all[0]; const isLatest = x === all[0];
+    const nextM = (() => { const [y, mo] = all[0].month.split('-').map(Number); return mo === 12 ? `${y + 1}-01` : `${y}-${String(mo + 1).padStart(2, '0')}`; })();
+    const mName = m => new Date(m + '-15T12:00:00').toLocaleDateString('en-US', { month:'long' });
+    const byYear = {}; all.forEach(o => (byYear[o.month.slice(0, 4)] = byYear[o.month.slice(0, 4)] || []).push(o));
+    const yrs = Object.keys(byYear); if (!yrs.includes(nextM.slice(0, 4))) { byYear[nextM.slice(0, 4)] = []; yrs.unshift(nextM.slice(0, 4)); }
+    const menu = yrs.sort((a, b) => b.localeCompare(a)).map(y => `<p class="ddyear">${y}</p>${(y === nextM.slice(0, 4) ? `<span class="dditem soon">${mName(nextM)}<small>Coming soon</small></span>` : '')}${byYear[y].sort((a, b) => b.month.localeCompare(a.month)).map(o => `<button type="button" class="dditem" data-issue="${o.month}"${o === x ? ' aria-current="true"' : ''}>${mName(o.month)}<small>${o === x ? 'Reading now' : `Issue ${o.issue}`}</small></button>`).join('')}`).join('');
+    const archive = `<details class="iarchdd"><summary>Archive</summary><div class="ddmenu">${menu}</div></details>`;
     return `<section class="issue" id="clockingin" aria-labelledby="issueH">
+      <div class="sdiv"><span>This month</span></div>
       <header class="imast"><div><h2 id="issueH" class="ibig">Clocking In</h2><p class="isub">A monthly letter on worker health from OEM360</p></div>
-      <p class="imeta"><span>Issue ${x.issue}</span><span>${fmtMonth(x.month)}</span><span>Next issue: ${nextMonth(x.month)}</span></p></header>
+      <div class="imetawrap">${archive}<p class="imeta"><span>Issue ${x.issue}</span><span>${fmtMonth(x.month)}</span>${isLatest ? `<span>Next issue: ${nextMonth(x.month)}</span>` : `<button type="button" class="ilatest" data-issue="${all[0].month}">Back to the latest issue</button>`}</p></div></header>
       <div class="igrid">
         <div class="inum"><span class="klabel">Number of the month</span><b>${x.stat.value}</b><p>${x.stat.text}</p><span class="isrc">Source [${x.stat.ref}]</span></div>
         <article class="iletter"><span class="klabel">What we’re reading</span>${letterHTML(x)}</article>
@@ -1017,8 +1090,10 @@ html body .top .langsel, html body .langsel.desk, html body .langsel.mob{ displa
           <label class="vh" for="irC">Email (optional)</label><input id="irC" name="c" type="email" placeholder="Email (optional)">
           <button type="submit">Send</button><p class="istatus" aria-live="polite"></p></form>
       </div>
-      ${all.length > 1 ? `<details class="iarchive"><summary>All issues</summary>${all.slice(1).map(o => `<details class="iold"><summary>Issue ${o.issue} · ${fmtMonth(o.month)}: ${o.title}</summary><div class="iletter">${letterHTML(o)}</div></details>`).join('')}</details>` : ''}
     </section>`; };
+  document.addEventListener('click', e => { const b = e.target.closest('[data-issue]'); if (!b) return; issueSel = b.dataset.issue;
+    const sec = document.getElementById('clockingin'); if (!sec) return; sec.outerHTML = issueHTML();
+    const n = document.getElementById('clockingin'); if (n) n.scrollIntoView({ behavior:'smooth', block:'start' }); });
   document.addEventListener('click', e => { if (e.target.closest('[data-goissue]')) { const el = document.getElementById('clockingin'); if (el) el.scrollIntoView({ behavior:'smooth', block:'start' }); } });
   document.addEventListener('submit', e => { const f = e.target.closest('.ireply'); if (!f) return; e.preventDefault();
     const st = f.querySelector('.istatus'), btn = f.querySelector('button'); const m = f.m.value.trim(); if (!m) return;
@@ -1033,7 +1108,7 @@ html body .top .langsel, html body .langsel.desk, html body .langsel.mob{ displa
   let shop = 'nails', who = 'workplace', fv = { n:'', c:'', m:'' }, msg = { text:'', err:false }, menuOpen = false;
   const root = document.getElementById('root');
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
-  const SHOPS = [['hospital','CITY HOSPITAL','#E2574C','#FFFDFB',''],['factory','RIVERSIDE PLANT','#E0A100','var(--ink)','var(--sign)'],['clinic','WORK HEALTH CLINIC','#3E8E6E','#DDEFE6',''],['base','BASE CLINIC','#6B7F3A','#E4E9D3',''],['agency','HEALTH DEPT.','#7B4562','#EBD5E1',''],['main','MAIN STREET','#5BA4C9','#DDF0F8','']];
+  const SHOPS = [['hospital','CITY HOSPITAL','#E2574C','#FFFDFB',''],['factory','RIVERSIDE PLANT','#E0A100','#1A1F45','#F2C14E'],['clinic','WORK HEALTH CLINIC','#3E8E6E','#DDEFE6',''],['base','BASE CLINIC','#6B7F3A','#E4E9D3',''],['agency','HEALTH DEPT.','#7B4562','#EBD5E1',''],['main','MAIN STREET','#5BA4C9','#DDF0F8','']];
   const WIN = {"hospital": "<rect x=\"10\" y=\"10\" width=\"44\" height=\"44\" rx=\"8\" fill=\"#FFFDFB\" stroke=\"#1A1F45\" stroke-width=\"3\"/><path d=\"M27 18h10v9h9v10h-9v9H27v-9h-9V27h9z\" fill=\"#E2574C\" stroke=\"#1A1F45\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/>", "factory": "<path d=\"M8 54V32l12 7v-7l12 7v-7l12 7V12h8v42z\" fill=\"#F2C14E\" stroke=\"#1A1F45\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M14 46h6M26 46h6M38 46h6\" stroke=\"#1A1F45\" stroke-width=\"3\"/>", "clinic": "<path d=\"M16 8v16a10 10 0 0 0 20 0V8\" fill=\"none\" stroke=\"#1A1F45\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M26 34v6a10 10 0 0 0 20 0v-6\" fill=\"none\" stroke=\"#1A1F45\" stroke-width=\"3\"/><circle cx=\"46\" cy=\"29\" r=\"6\" fill=\"#3E8E6E\" stroke=\"#1A1F45\" stroke-width=\"3\"/>", "base": "<path d=\"M32 8l7 15 16 2-12 11 3 16-14-8-14 8 3-16L9 25l16-2z\" fill=\"#8FA05A\" stroke=\"#1A1F45\" stroke-width=\"3\" stroke-linejoin=\"round\"/>", "agency": "<path d=\"M8 24L32 10l24 14z\" fill=\"#EBD5E1\" stroke=\"#1A1F45\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M15 29v18M26 29v18M38 29v18M49 29v18\" stroke=\"#1A1F45\" stroke-width=\"4\"/><path d=\"M8 53h48\" stroke=\"#1A1F45\" stroke-width=\"3\"/>", "main": "<path d=\"M10 24l5-12h34l5 12z\" fill=\"#E58AAE\" stroke=\"#1A1F45\" stroke-width=\"3\" stroke-linejoin=\"round\"/><rect x=\"14\" y=\"24\" width=\"36\" height=\"28\" fill=\"#FFFDFB\" stroke=\"#1A1F45\" stroke-width=\"3\"/><rect x=\"20\" y=\"32\" width=\"10\" height=\"20\" fill=\"#5BA4C9\" stroke=\"#1A1F45\" stroke-width=\"2.5\"/><rect x=\"35\" y=\"31\" width=\"10\" height=\"9\" fill=\"#F2C14E\" stroke=\"#1A1F45\" stroke-width=\"2.5\"/>"};
   const SEALS = [
     '<rect x="6" y="11" width="28" height="20" rx="4" fill="none" stroke="#0B53E0" stroke-width="3"/><circle cx="20" cy="21" r="5.5" fill="none" stroke="#0B53E0" stroke-width="3"/><path d="M14 11l2-4h8l2 4" fill="none" stroke="#0B53E0" stroke-width="3"/>',
@@ -1193,6 +1268,7 @@ start: scene ? sceneHTML(t, TB) : `<section class="hero">
     <div class="stats">${t.stats.map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('')}</div>
     </div>${teaserHTML()}</div>
     ${issueHTML()}
+    <div class="sdiv"><span>Where OEM doctors work</span></div>
     <div class="street">
       <p class="street-hint">${t.hint}</p>
       <div class="block" role="group" aria-label="${t.hint}">
@@ -1204,7 +1280,7 @@ start: scene ? sceneHTML(t, TB) : `<section class="hero">
       <div class="sidewalk"></div><div class="curb"></div>
     </div>
   </section>
-  <section class="s paths" id="pathways" aria-label="Who OEM360 aims to support">
+  <section class="s paths" id="pathways" aria-label="Who OEM360 aims to support"><div class="sdiv"><span>Who we serve</span></div>
     <h2>Two workforces. One shared goal.</h2>
     <p class="intro">Protecting workers' health also means helping people find the right information and inspiring future professionals to enter the field.</p>
     <div class="path-grid">
@@ -1212,7 +1288,7 @@ start: scene ? sceneHTML(t, TB) : `<section class="hero">
       <article class="path-card"><span class="path-kicker">Tomorrow's workforce</span><h3>Students and future OEM clinicians</h3><p>Discover occupational medicine through career stories, chapter talks, mentorship, and the working families whose experiences inspired us.</p><button type="button" class="path-link" data-tab="help">Help build student outreach →</button></article>
     </div>
   </section>
-  <section class="s about" id="about">
+  <section class="s about" id="about"><div class="sdiv"><span>About</span></div>
     <h2>${t.aboutH}</h2>
     <div class="aboutgrid"><div class="aboutcard mission">${t.mission.map(x => `<p>${x}</p>`).join('')}<p class="status">${t.status}</p></div>
     <div class="aboutcard seek"><h3>${t.seekH}</h3><ul>${t.seek.map(x => `<li>${x}</li>`).join('')}</ul><a class="seeklink" href="#join" data-tab="join">${t.nav.join} →</a></div><div class="aboutcard advisor"><h3>${t.advH}</h3><p>${t.advP}</p><a class="seeklink" href="#join" data-tab="join">${t.nav.join} →</a></div></div>
