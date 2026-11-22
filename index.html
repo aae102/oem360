@@ -844,6 +844,40 @@ html body .top .langsel, html body .langsel.desk, html body .langsel.mob{ displa
 @media(max-width:900px){.resource-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.path-grid,.resource-grid{grid-template-columns:1fr}.join{grid-template-columns:1fr 1fr}.join button:nth-child(3n){border-right:1px solid var(--rule)}.join button:nth-child(2n){border-right:0}}
 @media(max-width:480px){.join{grid-template-columns:1fr}.join button{border-right:0 !important;border-bottom:1px solid var(--rule) !important}.join button:last-child{border-bottom:0 !important}}
+
+.herotop{ display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:clamp(24px,4vw,48px); align-items:start; }
+.updates{ background:var(--white); border-radius:16px; box-shadow:var(--shadow); padding:18px 18px 10px; margin-top:6px; }
+.uhead{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding-bottom:10px; border-bottom:1px solid var(--rule); }
+.uhead h2{ margin:0; font-size:19px; font-family:var(--display); font-weight:600; }
+.uhead span{ font-size:12.5px; font-weight:600; color:var(--ink2); white-space:nowrap; }
+.ulist{ list-style:none; margin:0; padding:0; }
+.ulist li{ border-bottom:1px solid var(--rule); }
+.ulist li:last-child{ border-bottom:0; }
+.upost summary{ list-style:none; cursor:pointer; padding:11px 0; display:flex; flex-direction:column; gap:3px; }
+.upost summary::-webkit-details-marker{ display:none; }
+.utag{ font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); }
+.utitle{ font-size:15px; font-weight:600; line-height:1.35; color:var(--ink); }
+.upost[open] .utitle{ color:var(--blue); }
+.upost p{ margin:0 0 8px; font-size:14px; line-height:1.55; color:var(--ink2); }
+.usrc{ display:flex; flex-wrap:wrap; gap:4px 12px; margin-bottom:12px !important; }
+.usrc a{ font-size:12.5px; font-weight:600; color:var(--blue); }
+.uearlier summary{ cursor:pointer; padding:10px 0; font-size:13.5px; font-weight:600; color:var(--ink2); }
+.uweek{ margin:6px 0 0; font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--plum); }
+@media (max-width:1000px){ .herotop{ grid-template-columns:1fr; } .updates{ margin-top:20px; } }
+@media (max-width:760px){ .updates{ padding:14px 14px 6px; border-radius:14px; } .utitle{ font-size:14.5px; } }
+
+.updates .upost h3{ margin:12px 0 8px; font-size:18px; line-height:1.3; font-family:var(--display); font-weight:600; }
+.updates .upost p{ margin:0 0 10px; font-size:14.5px; line-height:1.6; color:var(--ink); }
+.ucite{ font-size:10.5px; color:var(--blue); font-weight:700; margin-left:1px; }
+.umore summary{ cursor:pointer; font-size:13.5px; font-weight:700; color:var(--blue); padding:2px 0 12px; list-style:none; }
+.umore summary::-webkit-details-marker{ display:none; }
+.umore[open] summary{ display:none; }
+.umore h4{ margin:14px 0 6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); font-family:inherit; }
+.urefs{ margin:0 0 12px; padding-left:20px; }
+.urefs li{ font-size:12.5px; line-height:1.5; margin:0 0 6px; color:var(--ink2); }
+.urefs a{ color:var(--ink2); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px; }
+.urefs a:hover{ color:var(--blue); }
+.umonth{ margin:10px 0 0; font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--plum); }
 </style>
 </head>
 <body class="gated">
@@ -873,6 +907,45 @@ html body .top .langsel, html body .langsel.desk, html body .langsel.mob{ displa
   const embed = location.hash === '#embed';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const EMAIL = 'aniyaell27@yahoo.com';
+
+  /* =====================================================================
+     MONTHLY UPDATES (shown on the first page). Add each new month at the TOP.
+     Copy one { ... } block and change:
+       month: 'YYYY-MM'
+       title: the update's headline
+       body:  one string per paragraph; cite sources as [1] or [1, 2]
+       refs:  numbered in order: ['Reference text', 'link']
+     Keep the comma between blocks.
+     ===================================================================== */
+  const UPDATES = [
+    { month:'2026-11',
+      title:'The money behind OEM training, and the workers it protects',
+      body:[
+        'This month we looked at the federal funding behind occupational and environmental medicine (OEM) training. Congress funded NIOSH at $366.8 million for 2026, including $32 million for its Education and Research Centers [1, 2]. Those centers fund nearly all accredited OEM residency programs in the US [3]. The 2027 budget request proposes eliminating them, and 2027 funding is not yet final [4].',
+        'The need for OEM physicians is growing. Direct care workers, such as home health aides, are injured almost 2.5 times as often as other workers and 5.5 times as often by violence; most are women, and most are people of color [5]. Prevention can work. One hospital’s team-based program cut nursing staff injury rates by an average of 40% [6], and a recent review found that long-term programs with leadership support work better than one-time trainings [7].',
+        'The pipeline is thin. Most OEM residents and recent graduates surveyed learned about the field only after medical school, and applications fell from about 160 a year to about 70 in 2023 [8]. That is why OEM360 starts with students.'
+      ],
+      refs:[
+        ['AIHA. NIOSH, other OEHS agencies funded for fiscal year 2026. February 19, 2026.', 'https://www.aiha.org/news/260219-niosh-other-oehs-agencies-funded-for-fiscal-year-2026'],
+        ['UCSF Occupational and Environmental Medicine. Victory: NIOSH staff reinstated. 2026.', 'https://oecm.ucsf.edu/news/victory-niosh-staff-reinstated'],
+        ['Gabrielson AT, Corwin C. Occupational health and safety on the chopping block: what’s at stake? N Engl J Med. 2025;393:1353-1355.', 'https://www.nejm.org/doi/10.1056/NEJMp2510512'],
+        ['ISHN. NIOSH core functions face elimination in FY27 funding proposal. 2026.', 'https://www.ishn.com/articles/115264-niosh-core-functions-face-elimination-in-fy27-funding-proposal'],
+        ['Paris J, Frank RG. Workplace injuries in a changing labor market. Brookings Institution. December 5, 2024.', 'https://www.brookings.edu/articles/workplace-injuries-in-a-changing-labor-market'],
+        ['Lakatos BE, Mitchell MT, et al. An interdisciplinary clinical approach for workplace violence prevention and injury reduction in the general hospital setting: S.A.F.E. Response. J Am Psychiatr Nurses Assoc. 2019;25(4):280-288.', 'https://pesquisa.bvsalud.org/bvsiec/resource/pt/mdl-30009653'],
+        ['La Barbiera C, De Carlo A. Success factors in prevention activities and training intervention against workplace violence in healthcare: a systematic review. 2026.', 'https://iris.unime.it/handle/11570/3359552'],
+        ['Blumberg MJ, Harrison RJ. Recruitment challenges for physician training in occupational and environmental medicine. J Occup Environ Med. 2025;67(8).', 'https://escholarship.org/uc/item/6bk9s666']
+      ] },
+  ];
+  const updatesHTML = () => {
+    if (!UPDATES.length) return '';
+    const fmt = m => new Date(m + '-15T12:00:00').toLocaleDateString('en-US', { month:'long', year:'numeric' });
+    const cite = p => p.replace(/\s?\[(\d+(?:,\s*\d+)*)\]/g, (_, n) => `<sup class="ucite">[${n}]</sup>`);
+    const post = (u, full) => `<article class="upost"><h3>${u.title}</h3>${cite(u.body[0] ? `<p>${u.body[0]}</p>` : '')}<details class="umore"${full ? ' open' : ''}><summary>Read the full update →</summary>${u.body.slice(1).map(p => `<p>${cite(p)}</p>`).join('')}<h4>References</h4><ol class="urefs">${u.refs.map(([r, l]) => `<li>${l ? `<a href="${l}" target="_blank" rel="noopener">${r}</a>` : r}</li>`).join('')}</ol></details></article>`;
+    const list = UPDATES.slice().sort((a, b) => b.month.localeCompare(a.month));
+    const [first, ...rest] = list;
+    return `<aside class="updates" aria-labelledby="updH"><div class="uhead"><h2 id="updH">Monthly update</h2><span>${fmt(first.month)}</span></div>${post(first)}${rest.length ? `<details class="uearlier"><summary>Earlier updates</summary>${rest.map(u => `<p class="umonth">${fmt(u.month)}</p>${post(u)}`).join('')}</details>` : ''}</aside>`;
+  };
+  /* ======================= end of monthly updates ====================== */
   let L = 'en';
   let shop = 'nails', who = 'workplace', fv = { n:'', c:'', m:'' }, msg = { text:'', err:false }, menuOpen = false;
   const root = document.getElementById('root');
@@ -1028,12 +1101,14 @@ const TBICON = {"start": "<path d=\"M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6H9v6H5a1 
     const TB = TABS[L] || TABS.en, ti = TABKEYS.indexOf(tab);
     const P = {
 start: scene ? sceneHTML(t, TB) : `<section class="hero">
+    <div class="herotop"><div class="heromain">
     <p class="eyebrow">${t.pilot}</p>
     <h1>${t.h1a} <span class="l2">${t.h1b}</span></h1>
     <p class="lede">${t.lede}</p>
     <p class="bridge">${t.bridge}</p>
     <p class="statusline"><span class="sdot" aria-hidden="true"></span>${t.status}</p>
     <div class="stats">${t.stats.map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('')}</div>
+    </div>${updatesHTML()}</div>
     <div class="street">
       <p class="street-hint">${t.hint}</p>
       <div class="block" role="group" aria-label="${t.hint}">
