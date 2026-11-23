@@ -1275,6 +1275,10 @@ body{ background:var(--paper); }
 .ock-a:hover{ filter:brightness(1.1); }
 @media (max-width:760px){ .offclk{ grid-template-columns:1fr; padding:18px; gap:12px; } .ock-l{ flex-direction:row; align-items:baseline; gap:10px; flex-wrap:wrap; } .ock-a{ justify-self:start; } }
 .dk .ock-a, [data-theme="dark"] .ock-a{ color:#0C0E1E; }
+.planfut{ margin-top:18px; padding:16px 18px; border:1px dashed var(--rule); border-radius:12px; }
+.pf-k{ font-size:11.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--plum); }
+.planfut h4{ margin:6px 0 6px; font-family:var(--display); font-size:19px; font-weight:600; color:var(--ink); }
+.planfut p{ margin:0; font-size:15px; line-height:1.6; color:var(--ink2); }
 </style>
 </head>
 <body class="gated">
@@ -1638,6 +1642,7 @@ start: scene ? sceneHTML(t, TB) : `<section class="hero">
       <li><b>Next: Formalize.</b> Establish nonprofit status, form an advisory board, and secure initial grant and sponsor funding under a published funding policy.</li>
       <li><b>Then: Expand.</b> Launch a mentorship network across students, residents and physicians, bring outreach to underserved communities, and advocate for funding of OEM residency programs.</li>
     </ol>
+    <div class="planfut"><span class="pf-k">In the future</span><h4>The George Robinson Award</h4><p>Named for George Robinson, a Hawk’s Nest Tunnel driller who testified before Congress in 1936 about the conditions that were killing his coworkers. Each year, we hope to cover residency application costs for one medical student pursuing occupational and environmental medicine. We are looking for students committed to serving working-class, underrepresented and underserved communities in their careers, the same workers George Robinson spoke up for.</p></div>
     <div class="abnote"><h3>Where we are today</h3><p>We are early. We do not provide medical care or collect donations, and we are not affiliated with ACOEM or any residency program. We are looking for an OEM physician advisor.</p></div></div></div>
   </section>
   <div class="hsec">${trailblazerHTML()}</div>
