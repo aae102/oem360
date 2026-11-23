@@ -1264,6 +1264,17 @@ body{ background:var(--paper); }
 .lrefs summary{ cursor:pointer; font-weight:700; color:var(--blue); }
 .lrefs ol{ margin:10px 0 0; padding-left:1.3em; line-height:1.6; }
 .lrefs a{ color:var(--ink2); }
+.offclk{ display:grid; grid-template-columns:170px 1fr auto; gap:18px 26px; align-items:center; background:var(--white); border:1px solid var(--rule); border-left:4px solid var(--blue); border-radius:14px; padding:20px 24px; margin:0 0 34px; }
+.ock-l{ display:flex; flex-direction:column; gap:6px; }
+.ock-k{ font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); }
+.ock-t{ font-size:13px; color:var(--ink2); }
+.ock-b h3{ margin:0 0 6px; font-family:var(--display); font-size:21px; font-weight:600; color:var(--ink); line-height:1.25; }
+.ock-b p{ margin:0; font-size:15px; line-height:1.6; color:var(--ink2); }
+.ock-b .ock-n{ margin-top:6px; font-size:12.5px; opacity:.8; font-style:italic; }
+.ock-a{ white-space:nowrap; font-weight:700; font-size:15px; color:#fff; background:var(--blue); padding:11px 20px; border-radius:999px; text-decoration:none; }
+.ock-a:hover{ filter:brightness(1.1); }
+@media (max-width:760px){ .offclk{ grid-template-columns:1fr; padding:18px; gap:12px; } .ock-l{ flex-direction:row; align-items:baseline; gap:10px; flex-wrap:wrap; } .ock-a{ justify-self:start; } }
+.dk .ock-a, [data-theme="dark"] .ock-a{ color:#0C0E1E; }
 </style>
 </head>
 <body class="gated">
@@ -1336,6 +1347,20 @@ body{ background:var(--paper); }
   const letterHTML = x => `<h3 class="ltitle">${x.title}</h3>${x.body.map((p, i) => `<p${i === 0 ? ' class="lfirst"' : ''}>${citeHTML(p)}</p>`).join('')}<details class="lrefs"><summary>References (${x.refs.length})</summary><ol>${x.refs.map(([r, l]) => `<li>${l ? `<a href="${l}" target="_blank" rel="noopener">${r}</a>` : r}</li>`).join('')}</ol></details>`;
   let issueSel = null, archYear = null;
   document.addEventListener('click', e => { document.querySelectorAll('.iarchdd[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; }); });
+  /* OFF THE CLOCK. One pick at a time: a video, article, book, documentary or podcast.
+     To change it, edit type, title, text and link below. No archive. */
+  const OFFCLOCK = {
+    type: 'Documentary · 44 min',
+    title: 'A&E: When Patients Attack',
+    text: 'A UK hospital security team works around the clock to protect nurses and doctors from patients and visitors who turn violent. A raw look at what workplace violence in healthcare really looks like.',
+    note: 'Contains strong language and restraint scenes.',
+    link: 'https://youtu.be/3bWd1AZbSSk',
+    cta: 'Watch'
+  };
+  const offClockHTML = () => { const o = OFFCLOCK; if (!o || !o.link) return '';
+    return `<aside class="offclk"><div class="ock-l"><span class="ock-k">Off the Clock</span><span class="ock-t">${esc(o.type||'')}</span></div>
+      <div class="ock-b"><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p>${o.note?`<p class="ock-n">${esc(o.note)}</p>`:''}</div>
+      <a class="ock-a" href="${esc(o.link)}" target="_blank" rel="noopener">${esc(o.cta||'Open')} <span aria-hidden="true">↗</span></a></aside>`; };
   const issueHTML = () => { const all = ISSUES.slice().sort((a, b) => b.month.localeCompare(a.month)); if (!all.length) return '';
     const x = all.find(o => o.month === issueSel) || all[0]; const isLatest = x === all[0];
     const nextM = (() => { const [y, mo] = all[0].month.split('-').map(Number); return mo === 12 ? `${y + 1}-01` : `${y}-${String(mo + 1).padStart(2, '0')}`; })();
@@ -1704,7 +1729,7 @@ learn: `<section class="s learn" id="learn">
       <p class="lsrc">Independent organizations, listed for information only.</p>
     </section>
   </section>`,
-news: `<section class="s newsp" id="news"><div class="hsec0">${issueHTML()}</div></section>`,
+news: `<section class="s newsp" id="news"><div class="hsec0">${offClockHTML()}${issueHTML()}</div></section>`,
 join: `<figure class="pbanner"><img src="${PHOTOS.students}" alt=""></figure><section class="s" id="join">
     <h2>${t.joinH}</h2><p class="intro">${t.joinI}</p>
     <div class="join" role="group" aria-label="${t.joinH}">${WHO.map(k => `<button type="button" data-who="${k}" aria-pressed="${k === who}"><b>${t.btns[k][0]}</b><small>${t.btns[k][1]}</small></button>`).join('')}</div>
