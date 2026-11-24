@@ -1223,6 +1223,12 @@ body{ background:var(--paper); }
 .ltime h3{ margin:0 0 6px; font-size:19px; font-family:var(--display); font-weight:600; }
 .ltime p{ margin:0; font-size:16px; line-height:1.6; color:var(--ink2); }
 .ltime a{ color:var(--blue); font-weight:600; }
+.lfind{ display:flex; flex-direction:column; gap:8px; margin-top:28px; padding:24px 26px; border:1px solid var(--rule); border-left:4px solid var(--blue); border-radius:14px; background:var(--white); color:var(--ink); text-decoration:none; }
+.lfind:hover{ border-color:var(--blue); }
+.lf-k{ font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); }
+.lfind b{ font-family:var(--display); font-size:24px; font-weight:600; }
+.lf-p{ font-size:16px; line-height:1.6; color:var(--ink2); }
+.lf-a{ font-size:15px; font-weight:700; color:var(--blue); }
 .lres{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
 .lres a{ display:flex; flex-direction:column; gap:6px; padding:20px; border:1px solid var(--rule); border-radius:14px; background:var(--white); text-decoration:none; color:var(--ink); }
 .lres a:hover{ border-color:var(--blue); }
@@ -1695,6 +1701,13 @@ learn: `<section class="s learn" id="learn">
       <p class="lsrc">Source: <a href="https://www.nrmp.org/match-data/" target="_blank" rel="noopener">NRMP, Results and Data: 2026 Main Residency Match ↗</a></p>
       <div class="lpath"><div><h3>Civilian programs</h3><p>About 20 university programs, including Harvard, Johns Hopkins, Mount Sinai, Rutgers, Yale, Duke, Meharry, UCSF and the University of Washington. Most accept doctors after at least one year of residency.</p><a href="https://aoec.org/oem/where-can-i-train-in-oem/" target="_blank" rel="noopener">Full list from AOEC ↗</a></div>
       <div><h3>Military programs</h3><p>The Uniformed Services University and Walter Reed in Bethesda, MD, and the Army School of Aviation Medicine at Fort Novosel, AL, which combines aerospace and occupational medicine.</p><a href="https://medschool.usuhs.edu/pmb/education/residency" target="_blank" rel="noopener">Walter Reed program ↗</a> <a href="https://medcoe.army.mil/saam-rams" target="_blank" rel="noopener">Fort Novosel program ↗</a></div></div>
+      <a class="lfind" href="https://acoem.org/acoem-find-a-provider?boardCertifications=7%2c15%2c16&amp;status=Physician" target="_blank" rel="noopener">
+        <span class="lf-k">Find an OEM physician</span>
+        <b>ACOEM Find a Provider</b>
+        <span class="lf-p">A public directory of occupational and environmental medicine physicians across the U.S., run by the American College of Occupational and Environmental Medicine. Search by name, city or state.</span>
+        <span class="lf-a">Search the directory ↗</span>
+      </a>
+      <p class="lsrc">OEM360 is not affiliated with ACOEM. The directory opens on ACOEM’s website and is subject to its terms of use.</p>
     </section>
 
     <section class="lsec" id="l-rep"><div class="sdiv"><span>Representation</span></div>
